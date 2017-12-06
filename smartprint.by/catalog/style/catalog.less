@@ -1,0 +1,82 @@
+ @color-red: RGB(181, 43, 43);
+ @color-blue: RGB(53, 152, 219);
+ @color-darkblue: RGB(45, 133, 191);
+ @color-lightgray: RGB(222, 222, 222);
+ @color-gray: RGB(127, 127, 127);
+ @color-darkgray: RGB(50, 50, 50);
+ .main-content {
+     .main {
+         float: left;
+         flex-grow: 1;
+         border-left: 2px solid @color-darkblue; 
+         .main_content-box {
+             .all-items {
+                 .item {
+                     position: relative;
+                     border-radius: 10px;
+                     overflow: hidden; 
+                     border: 1px solid @color-gray;
+                     padding-bottom: 30px;
+                     margin-bottom: 30px;
+                     img {  
+                         display: block;
+                         float: left;
+                         width: 100%;
+                         max-width: 300px;
+                     }
+                     h2.item-name { 
+                         display: block;  
+                         line-height: 16px; 
+                         width: 100%;
+                         background: @color-red; 
+                         font-size: 16px;
+                         font-family: "Open Sans";
+                         font-weight: bold;
+                         text-align: center;
+                     }
+                     p {
+                         font-size:  14px;
+                         padding: 10px; 
+                         text-align: justify;
+                         background-color: white;
+                     }
+                     .btn-more {
+                         opacity: 0.5;
+                         font-size: 14px;
+                         line-height: 16px;
+                         float: right;
+                         padding: 3px 8px;
+                         border-radius: 10px;
+                         background-color: @color-gray;
+                         color: white;
+                         position: absolute;
+                         bottom: 10px;
+                         right: 10px;
+                     }
+                     .btn-more:hover {
+                         opacity: 1;
+                         box-shadow: -1px 1px 2px 0px @color-lightgray;
+                         position: absolute;
+                         bottom: 11px;
+                         right: 9px;
+                     }
+                     .btn-more:active {
+                         position: absolute;
+                         bottom: 10px;
+                         right: 10px;
+                     }
+                 }
+                 article.item:last-of-child {
+                     display: block;
+                     content: "Загрузка";
+                 }
+             }
+         }
+     }
+ }
+
+@media screen and (max-width: 751px) { 
+    .catalog  {
+        display: block !important;
+    }
+}

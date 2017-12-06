@@ -1,0 +1,65 @@
+@color-red: RGB(181,
+43,
+43); 
+@color-darkblue: RGB(45,
+133,
+191); 
+@color-gray: RGB(127,
+127,
+127); 
+
+.main-content { 
+    .main {  
+        .item {
+            border: 2px solid @color-red;
+            width: 100%; 
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            position: relative;
+            border-bottom-right-radius: 20px;
+            border-top-left-radius: 20px; 
+            h3 {font-weight: bold;
+                font-family: "Open Sans";
+                color: @color-red;
+                font-size: 30px;
+                padding: 10px;}
+            img {
+                padding: 5px 10px;
+                float: left; 
+                width: 20%;
+            } 
+            p {
+                font-size:  14px;
+                text-indent: 30px;
+                text-align: justify; 
+                padding: 0px 10px;
+            } 
+            time {
+                position: absolute;
+                bottom: 10px;
+                left: 10px;
+                color: @color-gray;
+                font-size: 14px;
+                font-style: italic;} 
+            a {  
+                position: absolute;
+                bottom: 15px;
+                right: 15px;
+                color: @color-darkblue;
+                font-weight: bold; }
+            
+        }
+        .item:after {
+            visibility: hidden;
+             display: block;
+             font-size: 0;
+             content: " ";
+             clear: both;
+             height: 0;
+        }
+    }
+ }
+  
+
+
+

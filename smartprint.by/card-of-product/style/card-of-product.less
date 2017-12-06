@@ -1,0 +1,232 @@
+@color-red: RGB(181, 43, 43);
+@color-blue: RGB(53, 152, 219);
+@color-gray: RGB(127, 127, 127);
+@color-darkgray: RGB(50, 50, 50);
+.main-content {
+    .main {
+        .card-of-product {
+            min-height: 300px;
+            h2 {
+                text-align: center;
+                margin: 0px;
+                font-size: 18px;
+                line-height: 18px;
+                padding: 8px 30px;
+                color: white;
+                background: @color-darkgray;
+                border-bottom: 1px solid white;
+            }
+            .card-content {
+                display: flex;
+                section {
+                    min-height: 625px;
+                    display: none;
+                }
+                input[type="radio"] {
+                    display: none;
+                }
+                input[type="radio"] ~ ul label:hover {
+                    cursor: pointer;
+                    opacity: 0.85;
+                }
+                .navigation {
+                    width: 42px;
+                    display: flex;
+                    writing-mode: vertical-rl;
+                    list-style: none;
+                    padding: 0px;
+                    margin: 0px;
+                    display: flex;
+                    li {
+                        border-right: 2px solid @color-red;
+                        transform: rotate(180deg);
+                        label {
+                            display: block;
+                            color: white;
+                            background: @color-darkgray;
+                            line-height: 20px;
+                            padding: 10px;
+                            box-shadow: -1px 0px 3px -2px black;
+                            border-bottom: 1px solid white;
+                        }
+                    }
+                    li:first-of-type label {
+                        border-bottom: none;
+                    }
+                }
+                //              Checking TABS 
+                #main-tab:checked ~ ul label[for="main-tab"],
+                #characteristics-tab:checked ~ ul label[for="characteristics-tab"],
+                #use-tab:checked ~ ul label[for="use-tab"],
+                #review-tab:checked ~ ul label[for="review-tab"] {
+                    background: @color-red;
+                    box-shadow: none;
+                    opacity: 1;
+                }
+                #main-tab:checked ~ section.main-tab,
+                #characteristics-tab:checked ~ section.characteristics-tab,
+                #use-tab:checked ~ section.use-tab,
+                #review-tab:checked ~ section.review-tab {
+                    display: block;
+                }
+                .content {
+                    p {
+                        text-indent: 30px;
+                        text-align: justify;
+                    }
+                    padding: 10px;
+                    padding-right: 0px;
+                }
+                .main-tab .center {
+                    overflow: hidden;
+                    padding-right: 10px;
+                    padding-top: 5px;
+                    float: left;
+                    max-width: 500px;
+                    height: 300px;
+                    .item {
+                        height: 100%;
+                        img {
+                            margin: auto;
+                            width: auto;
+                        }
+                    }
+                }
+                .characteristics-tab {
+                    margin: auto;
+                    .table {
+                        font-weight: bold;
+                        line-height: 30px;
+                        display: table;
+                        border-collapse: collapse;
+                        .row {
+                            display: table-row;
+                            .cell {
+                                padding: 0px 5px;
+                                display: table-cell;
+                                text-align: center;
+                                border: 2px solid @color-gray;
+                            }
+                        }
+                        .row-1 > .cell:last-of-type,
+                        .row-2 > .cell:last-of-type,
+                        .row-13 > .cell:last-of-type {
+                            .cell {
+                                display: inline-block;
+                                width: 30%;
+                                border: none;
+                            }
+                            .cell-center {
+                                border-left: 1px solid @color-gray;
+                                border-right: 1px solid @color-gray;
+                            }
+                        }
+                    }
+                }
+                .use-tab {
+                    img {
+                        float: left;
+                        width: 320px;
+                        padding-top: 10px;
+                        padding-right: 10px;
+                    }
+                    img:nth-of-type(2n) {
+                        float: right;
+                    }
+                }
+                .review-tab {
+                    width: 100%;
+                    padding: 0px;
+                    video {
+                        width: 100%;
+                    }
+                }
+            }
+            form {
+                margin: 20px 0px;
+                display: flex;
+                justify-content: space-between;
+                input {
+                    flex-grow: 1;
+                    line-height: 14px;
+                    padding: 5px;
+                    font-size: 14px;
+                    border: 2px solid @color-red;
+                }
+                input:nth-of-type(2) {
+                    margin: 0px 20px;
+                }
+                #submit {
+                    cursor: pointer;
+                    background-color: @color-red;
+                    color: white;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    z-index: 5;
+    padding: 10px 30px;
+    min-height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+    color: white;
+    border-bottom: 5px solid red;
+    background-color: @color-darkgray;
+    background: linear-gradient(to top, @color-darkgray, RGB(60, 60, 60));
+    box-shadow: 0px -1px 2px 0px @color-gray;
+    .adress {
+        padding: 10px 0px;
+        display: block;
+        text-align: center;
+    }
+    div {
+        flex: 1;
+        a {
+            line-height: 20px;
+            color: white;
+            text-decoration: none;
+        }
+        .social-link {
+            margin: 15px 5px;
+            text-align: center;
+            display: block;
+            background-color: @color-blue;
+            line-height: 30px;
+            width: 30px;
+            float: right;
+            border-radius: 50%;
+        }
+        .social-link:hover {
+            position: relative;
+            top: -1px;
+            left: -1px;
+            box-shadow: -1px 1px 1px 0px @color-darkgray, inset -1px 1px 5px -4px white;
+        }
+        .social-link:active {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            box-shadow: none;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .use-tab img, .center, .item {width: 100% !mportant;}
+    .main-tab {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    } 
+}
+@media screen and (max-width: 800px) {
+    
+    .main-contant {
+        display: none;
+    }
+}
